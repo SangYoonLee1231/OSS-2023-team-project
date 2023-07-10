@@ -142,12 +142,17 @@ class Mine:
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
 
-    def sign(self,x,y):
-        #마우스 우클릭 설정
-        pass
+    def sign(self,x,y): #마우스 우클릭설정
+        if (x,y) not in self.dg:
+            if self.click[x][y]["text"] == "":
+                self.click[x][y]["text"] = "?"
+            elif self.click[x][y]["text"] == "?":
+                self.click[x][y]["text"] = "!"
+            elif self.click[x][y]["text"] == "!":
+                self.click[x][y]["text"] = ""
     
     
-    def lose(self):
+    def lose(self): #패배조건 생성
          for x in range(self.width):
             for y in range(self.width):
                 if self.board[x][y] == 'B':
@@ -160,9 +165,8 @@ class Mine:
          self.game.quit()
 
     
-    def destroy(self):
-        #게임 종료시 창 닫는 기능
-        pass
+    def destroy(self): #게임 종료시 창 닫는 기능
+        self.game.destroy()
     
     def start(self):
         self.game.mainloop()
