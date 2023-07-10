@@ -122,6 +122,10 @@ class Mine:
                     self.board[x][y] = count     
                        
     def Mine(self,x,y):
+        if (x,y) not in self.dg and self.click[x][y] != "?":
+            self.dg.add((x,y))
+            if self.board[x][y] == "B":
+                self.lose()
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
         pass
