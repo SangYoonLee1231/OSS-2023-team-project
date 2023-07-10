@@ -110,9 +110,11 @@ class Mine:
             self.board[x][y] = "B"
             bomb += 1           
 
-    def calculate(self):
-        #주변 지뢰 갯수 측정해 숫자 띄우기
-        pass
+    def calculate(self): #주변 지뢰 갯수 측정해 숫자 띄우기
+        for x in range(self.width):
+            for y in range(self.width):
+                if self.board[x][y] != "B":        
+        
     def Mine(self,x,y):
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
