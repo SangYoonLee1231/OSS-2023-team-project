@@ -89,7 +89,12 @@ class Mine:
         for x in range(width): #마우스 왼클릭 우클릭 for문
             dig_click = []
             for y in range(width):
-
+                click = Button(self.game, width=4, height=2)
+                click.grid(row=x, column=y)
+                click.bind('<Button-1>', lambda event, x=x, y=y: self.Mine(x, y))
+                click.bind('<Button-3>', lambda event, x=x, y=y: self.sign(x, y))
+                dig_click.append(click)
+            self.click.append(dig_click)
         #마우스 왼클릭,우클릭 설정
         self.create_random_bomb()
         self.calculate()
