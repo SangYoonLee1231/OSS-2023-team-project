@@ -183,7 +183,10 @@ class Fivestone:
         return is_win
 
     def switch(self):
-        #'O'와 'o'를 번갈아 가면 실행
+        if self.player == 'O':
+            self.player = 'o'
+        else:
+            self.player = 'O'
         pass
     def result(self,result):
         tkinter.messagebox.showinfo("결과",result)
