@@ -167,6 +167,14 @@ class Fivestone:
     def mark(self,x,y):
         button = self.board[x][y]
         if button["text"] == "":
+            
+            if self.player == 'O':
+                button["text"] = self.player
+                button.config(fg="black")
+            else:
+                button["text"] = self.player
+                button.config(fg="red")
+            
             if self.is_win(x,y) == True:
                 self.result("{} won!".format(self.player))
             elif self.is_draw() == True:
