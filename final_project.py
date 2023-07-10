@@ -114,7 +114,13 @@ class Mine:
         for x in range(self.width):
             for y in range(self.width):
                 if self.board[x][y] != "B":        
-        
+                    count = 0
+                    for x1 in range(max(0, x - 1), min(self.width, x+ 2)):
+                        for y1 in range(max(0, y - 1), min(self.width, y + 2)):
+                            if self.board[x1][y1] == "B":
+                                count += 1
+                    self.board[x][y] = count     
+                       
     def Mine(self,x,y):
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
