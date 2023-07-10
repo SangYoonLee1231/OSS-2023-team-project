@@ -94,16 +94,17 @@ class Mine:
                 click.bind('<Button-1>', lambda event, x=x, y=y: self.Mine(x, y))
                 click.bind('<Button-3>', lambda event, x=x, y=y: self.sign(x, y))
                 dig_click.append(click)
-            self.click.append(dig_click)
-        #마우스 왼클릭,우클릭 설정
+            self.click.append(dig_click) #마우스 왼클릭,우클릭 설정
         self.create_random_bomb()
         self.calculate()
         
     
 
-    def create_random_bomb(self):
-        #랜덤위치에 원하는 갯수만큼 폭탄생성
-        pass
+    def create_random_bomb(self): #랜덤위치에 원하는 갯수만큼 폭탄생성
+        bomb = 0
+        while bomb < self.bomb:
+            
+
     def calculate(self):
         #주변 지뢰 갯수 측정해 숫자 띄우기
         pass
