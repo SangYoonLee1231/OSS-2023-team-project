@@ -85,6 +85,11 @@ class Mine:
         self.game.title("지뢰찾기")
         self.game.geometry("400x400")
         self.click = []
+        
+        for x in range(width): #마우스 왼클릭 우클릭 for문
+            dig_click = []
+            for y in range(width):
+
         #마우스 왼클릭,우클릭 설정
         self.create_random_bomb()
         self.calculate()
