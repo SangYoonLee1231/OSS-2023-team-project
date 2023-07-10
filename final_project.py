@@ -126,6 +126,19 @@ class Mine:
             self.dg.add((x,y))
             if self.board[x][y] == "B":
                 self.lose()
+            else:
+                self.click[x][y]["text"] = str(self.board[x][y])
+                if self.board[x][y] == 0:
+                    self.click[x][y].config(bg = "yellow")
+                elif self.board[x][y] == 1:
+                    self.click[x][y].config(bg = "blue")
+                elif self.board[x][y] == 2:
+                    self.click[x][y].config(bg = "green")
+                else:
+                    self.click[x][y].config(bg = "red")
+                if len(self.dg) == self.width ** 2 - self.bomb:
+                    tkinter.messagebox.showinfo("게임 종료", "지뢰찾기에서 승리하였습니다.")
+                    self.game.quit()
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
         pass
