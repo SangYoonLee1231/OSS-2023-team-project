@@ -62,12 +62,12 @@ class Mineset:
         width = self.width.get()
         bomb = self.bomb.get()
 
-        start = time.time() #게임시간 코드 (시작)
+        start = time.time() #게임시간 코드(시작)
 
         minegame = Mine(width,bomb)
         minegame.start()
 
-        end = time.time() #게임시간 코드 (끝)
+        end = time.time() #게임시간 코드(끝)
         times = "{:.1f}".format(end - start)
         tkinter.messagebox.showinfo("게임 작동 시간",f"지뢰찾기에 걸린 시간: {times}초 입니다.")
         
