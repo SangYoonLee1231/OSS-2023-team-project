@@ -141,15 +141,23 @@ class Mine:
                     self.game.quit()
         #땅 파서 지뢰일시 lose()함수 실행 아닐시 승리 메세지 띄우기
         #숫자별 색깔 설정
-        pass
+
     def sign(self,x,y):
         #마우스 우클릭 설정
         pass
     
     
     def lose(self):
-        #패배 조건 생성
-        pass
+         for x in range(self.width):
+            for y in range(self.width):
+                if self.board[x][y] == 'B':
+                    self.click[x][y].config(text="B",state = "disabled")
+                    
+                else:
+                    self.click[x][y].config(text=str(self.board[x][y]),state = "disabled")
+                    
+         tkinter.messagebox.showinfo("게임 종료", "지뢰찾기에서 패배하였습니다.")
+         self.game.quit()
 
     
     def destroy(self):
