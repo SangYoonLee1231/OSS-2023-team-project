@@ -249,6 +249,7 @@ class Fivestone:
         pass
     def result(self,result):
         tkinter.messagebox.showinfo("결과",result)
+        self.game.destroy()
 
 
 class TicTacToe:
