@@ -39,6 +39,7 @@ class boardgame:
             fivestone.game.mainloop()
         self.root.quit()
 
+        
 class Mineset:
     def __init__(self):
         self.game = Tk()
@@ -152,4 +153,45 @@ class Fivestone:
         pass
     def result(self,result):
         tkinter.messagebox.showinfo("결과",result)
+
+
+class TicTacToe:
+    def __init__(self):
+        self.game = Tk()
+        self.game.title("5X5 틱백토 game")
+        self.player = 'O'
+        self.board = []
+        self.create_board()
+        self.game.mainloop()
+
+    def create_board(self):
+        #노란색의 5*5틱택토 판 만들기
+        pass
+    def is_win(self):
+        #5*5틱택토의 승리조건
+        pass
+
+    def is_draw(self):
+        is_draw = True
+        for row in self.board:
+            for button in row:
+                if button["text"] == "":
+                    is_draw =  False
+        return is_draw
+    
+    def mark(self,x,y):
+        button = self.board[x][y]
+        if button["text"] == "":
+            pass
+            #O,X의 색깔 변경
+            #gui로 승리,비김 메세지 띄우기
+            
+    def switch(self):
+        if self.player == 'O':
+            self.player = 'x'
+        else:
+            self.player = 'O'
+    
+    def resultmessage(self,result):
+        #최종결과 메세지 띄우기
         self.game.destroy()
