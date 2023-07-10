@@ -38,3 +38,5 @@ class boardgame:
             fivestone = Fivestone()
             fivestone.game.mainloop()
         self.root.quit()
+
+
