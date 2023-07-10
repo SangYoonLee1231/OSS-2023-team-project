@@ -88,9 +88,21 @@ class TicTacToe:
     def mark(self,x,y):
         button = self.board[x][y]
         if button["text"] == "":
-            pass
             #O,X의 색깔 변경
             #gui로 승리,비김 메세지 띄우기
+            if self.player == 'O':
+                button["text"] = self.player
+                button.config(fg="blue")
+            else:
+                button["text"] = self.player
+                button.config(fg="red")
+            
+            if self.is_win() == True:
+                self.resultmessage("{} won!".format(self.player))
+            elif self.is_draw() == True:
+                self.resultmessage("Draw!")
+            else:
+                self.switch()   
 
     def switch(self):
         if self.player == 'O':
@@ -100,4 +112,5 @@ class TicTacToe:
     
     def resultmessage(self,result):
         #최종결과 메세지 띄우기
+        tkinter.messagebox.showinfo("결과",result)
         self.game.destroy()
