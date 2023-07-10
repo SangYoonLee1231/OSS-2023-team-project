@@ -103,7 +103,12 @@ class Mine:
     def create_random_bomb(self): #랜덤위치에 원하는 갯수만큼 폭탄생성
         bomb = 0
         while bomb < self.bomb:
-            
+            x = random.randint(0,self.width -1)
+            y = random.randint(0,self.width -1)
+            if self.board[x][y] == "B":
+                continue
+            self.board[x][y] = "B"
+            bomb += 1           
 
     def calculate(self):
         #주변 지뢰 갯수 측정해 숫자 띄우기
