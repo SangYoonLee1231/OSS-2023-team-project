@@ -61,7 +61,21 @@ class TicTacToe:
 
     def is_win(self):
         #5*5틱택토의 승리조건
-        pass
+        is_win = False
+        for x in range(5):
+            if self.board[x][0]["text"] == self.board[x][1]["text"] == self.board[x][2]["text"] == self.board[x][3]["text"] != "" or self.board[x][1]["text"] == self.board[x][2]["text"]  == self.board[x][3]["text"] == self.board[x][4]["text"] != "":
+                is_win = True
+            if self.board[0][x]["text"] == self.board[1][x]["text"] == self.board[2][x]["text"] == self.board[3][x]["text"] != "" or self.board[1][x]["text"] ==  self.board[2][x]["text"] == self.board[3][x]["text"] == self.board[4][x]["text"] != "":
+                is_win = True
+        if self.board[0][0]["text"] == self.board[1][1]["text"] == self.board[2][2]["text"] == self.board[3][3]["text"] != "" or self.board[1][1]["text"] == self.board[2][2]["text"] == self.board[3][3]["text"] == self.board[4][4]["text"] != "":
+            is_win = True
+        if self.board[0][4]["text"] == self.board[1][3]["text"] == self.board[2][2]["text"] == self.board[3][1]["text"] != "" or self.board[1][3]["text"] == self.board[2][2]["text"] == self.board[3][1]["text"] == self.board[4][0]["text"] != "":
+            is_win = True
+        if self.board[1][4]["text"] == self.board[2][3]["text"] == self.board[3][2]["text"] == self.board[4][1]["text"] != "" or self.board[3][0]["text"] == self.board[2][1]["text" ] == self.board[1][2]["text"] == self.board[0][3]["text"] != "":
+            is_win = True
+        if self.board[3][4]["text"] == self.board[2][3]["text"] == self.board[1][2]["text"] == self.board[0][1]["text"] != "" or self.board[1][0]["text"] == self.board[2][1]["text" ] == self.board[3][2]["text"] == self.board[4][3]["text"] != "":
+            return True
+        return is_win
 
     def is_draw(self):
         is_draw = True
