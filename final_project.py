@@ -22,7 +22,7 @@ class boardgame:
         button4 = Button(self.root, text="선택 확정", command=self.start)
         button4.pack()
         self.root.mainloop()
-        
+        ##
 
         
     def start(self):
