@@ -159,11 +159,14 @@ class Fivestone:
         return is_draw
 
     def mark(self,x,y):
-        #판에 O와 o를 표시 
-        #O,o의 색깔 변경
-        #O,o를 번갈아 하기
-        #승리,비길시 메세지 띄우기
-        pass
+        button = self.board[x][y]
+        if button["text"] == "":
+            if self.is_win(x,y) == True:
+                self.result("{} won!".format(self.player))
+            elif self.is_draw() == True:
+                self.result("Draw!")
+            else:
+                self.switch()
 
     def is_win(self,i,j):
         is_win = False
