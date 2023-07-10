@@ -166,7 +166,14 @@ class TicTacToe:
 
     def create_board(self):
         #노란색의 5*5틱택토 판 만들기
-        pass
+        for i in range(5):
+            width = []
+            for j in range(5):
+                board_button = Button(self.game, width=5, height=2, command=lambda i=i, j=j: self.mark(i, j),bg="yellow")
+                board_button.grid(row=i, column=j)
+                width.append(board_button)
+            self.board.append(width)
+
     def is_win(self):
         #5*5틱택토의 승리조건
         pass
@@ -185,7 +192,7 @@ class TicTacToe:
             pass
             #O,X의 색깔 변경
             #gui로 승리,비김 메세지 띄우기
-            
+
     def switch(self):
         if self.player == 'O':
             self.player = 'x'
