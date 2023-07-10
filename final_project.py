@@ -39,6 +39,9 @@ class boardgame:
             fivestone.game.mainloop()
         self.root.quit()
 
+<<<<<<< HEAD
+
+=======
         
 class Mineset:
     def __init__(self):
@@ -129,8 +132,13 @@ class Fivestone:
         
 
     def create_board(self):
-        #판만들기
-        pass
+        for x in range(10):
+            width = []
+            for y in range(10):
+                board_button = Button(self.game,width=5,height=2,command=lambda x=x,y=y:self.mark(x,y))
+                board_button.grid(row=x,column=y)
+                width.append(board_button)
+            self.board.append(width)
     
 
     def is_draw(self):
@@ -202,3 +210,4 @@ class TicTacToe:
     def resultmessage(self,result):
         #최종결과 메세지 띄우기
         self.game.destroy()
+>>>>>>> origin/main
