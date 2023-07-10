@@ -142,8 +142,12 @@ class Fivestone:
     
 
     def is_draw(self):
-        #비기는 조건 샹성
-        pass
+        is_draw = True
+        for row in self.board:
+            for button in row:
+                if button["text"] == "":
+                    is_draw =  False
+        return is_draw
 
     def mark(self,x,y):
         #판에 O와 o를 표시 
