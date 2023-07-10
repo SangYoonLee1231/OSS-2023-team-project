@@ -157,8 +157,26 @@ class Fivestone:
         pass
 
     def is_win(self,i,j):
-        #승리조건 생성
-        pass
+        is_win = False
+        player = self.player
+        direction = [(1,0),(0,1),(1,1),(1,-1)]
+        for direct in direction:
+            count = 1
+            x,y = direct 
+            width,height = x + i,y+j
+            while 0 <= width < 10 and 0 <= height < 10 and self.board[width][height]["text"] == player:
+                count += 1
+                width += x
+                height += y
+            x, y = -x, -y
+            width,height = x + i,y+j
+            while 0 <= width < 10 and 0 <= height < 10 and self.board[width][height]["text"] == player:
+                count += 1
+                width += x
+                height += y
+            if count == 5:
+                is_win = True
+        return is_win
 
     def switch(self):
         #'O'와 'o'를 번갈아 가면 실행
